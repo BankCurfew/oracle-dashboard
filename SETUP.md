@@ -33,7 +33,7 @@
 ### Method 1: Quick Install Script
 
 ```bash
-curl -sSL https://raw.githubusercontent.com/Soul-Brews-Studio/oracle-v2/main/scripts/fresh-install.sh | bash
+curl -sSL https://raw.githubusercontent.com/BankCurfew/oracle-v2/main/scripts/fresh-install.sh | bash
 ```
 
 This will:
@@ -52,7 +52,7 @@ This will:
 #### Step 1: Clone and install
 
 ```bash
-git clone https://github.com/Soul-Brews-Studio/oracle-v2.git
+git clone https://github.com/BankCurfew/oracle-v2.git
 cd oracle-v2
 bun install
 ```
@@ -145,7 +145,7 @@ Add to `~/.claude.json` (global) or `.mcp.json` (per-project):
   "mcpServers": {
     "oracle-v2": {
       "command": "bunx",
-      "args": ["--bun", "oracle-v2@github:Soul-Brews-Studio/oracle-v2#main"]
+      "args": ["--bun", "oracle-v2@github:BankCurfew/oracle-v2#main"]
     }
   }
 }

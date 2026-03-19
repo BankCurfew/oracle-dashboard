@@ -1,7 +1,7 @@
 /**
  * Embedding Providers
  *
- * Ported from Nat-s-Agents data-aware-rag.
+ * Ported from BankCurfew data-aware-rag.
  * ChromaDB handles embeddings internally; other stores need these.
  */
 

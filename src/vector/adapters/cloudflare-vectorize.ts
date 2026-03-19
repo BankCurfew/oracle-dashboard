@@ -2,7 +2,7 @@
  * Cloudflare Vectorize Adapter
  *
  * Uses Cloudflare Workers AI for embeddings + Vectorize for vector storage.
- * Ported from Soul-Brews-Studio/webhook-relay src/vectorize.ts pattern.
+ * Ported from BankCurfew/webhook-relay src/vectorize.ts pattern.
  *
  * Two modes:
  * 1. **Worker mode**: Direct binding (env.VECTORIZE + env.AI) — zero latency

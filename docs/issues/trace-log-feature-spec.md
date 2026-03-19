@@ -21,7 +21,7 @@ Add a trace logging system to Oracle-v2 that captures discovery sessions, stores
 ## Problem Statement
 
 ### Current State
-1. `/trace` command in Nat-s-Agents discovers connections across git, files, issues
+1. `/trace` command in BankCurfew discovers connections across git, files, issues
 2. Results are shown to user but NOT logged
 3. If user wants to revisit a trace, they must re-run it
 4. No way to trace "what have we traced before?"
@@ -147,7 +147,7 @@ CREATE INDEX idx_trace_created ON trace_log(created_at DESC);
     "number": 40,
     "title": "Oracle v2 - Open Source Framework",
     "state": "open",
-    "url": "https://github.com/Soul-Brews-Studio/oracle-v2/issues/40",
+    "url": "https://github.com/BankCurfew/oracle-v2/issues/40",
     "match_reason": "title match"
   }
 ]
@@ -493,9 +493,9 @@ Location: Add to existing dashboard tabs alongside Search, Forum, Decisions, Act
 
 ## Integration with /trace Command
 
-### Auto-Logging in Nat-s-Agents
+### Auto-Logging in BankCurfew
 
-When `/trace` runs in Nat-s-Agents, it should auto-call `oracle_trace`:
+When `/trace` runs in BankCurfew, it should auto-call `oracle_trace`:
 
 ```typescript
 // In /trace skill execution
@@ -584,7 +584,7 @@ async function executeTrace(query: string) {
 
 ### Phase 6: Integration (Session 4)
 
-1. [ ] Update /trace skill in Nat-s-Agents to auto-log
+1. [ ] Update /trace skill in BankCurfew to auto-log
 2. [ ] Add trace ID to /trace output
 3. [ ] Create /dig command that uses oracle_trace_dig
 4. [ ] Create /distill-trace command
@@ -763,7 +763,7 @@ This feature embodies Oracle philosophy:
 - Existing MCP Tools: `src/index.ts`
 - Database Schema: `src/db/schema.ts`
 - Dashboard: `src/dashboard.html`
-- /trace Skill: `Nat-s-Agents/.claude/commands/trace.md`
+- /trace Skill: `BankCurfew/.claude/commands/trace.md`
 
 ---
 

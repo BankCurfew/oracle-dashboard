@@ -10,7 +10,7 @@
         <string>/bin/bash</string>
         <string>-c</string>
         <!-- Replace $HOME and paths below with your actual paths -->
-        <string>pkill -f 'bun.*oracle-v2/src/server.ts' 2>/dev/null; sleep 1; exec $HOME/.bun/bin/bun /path/to/Soul-Brews-Studio/oracle-v2/src/server.ts</string>
+        <string>pkill -f 'bun.*oracle-v2/src/server.ts' 2>/dev/null; sleep 1; exec $HOME/.bun/bin/bun /path/to/BankCurfew/oracle-v2/src/server.ts</string>
     </array>
 
     <!-- Set to true to auto-start at login -->
@@ -30,7 +30,7 @@
     <string>$HOME/.oracle-v2/oracle-server.error.log</string>
 
     <key>WorkingDirectory</key>
-    <string>/path/to/Soul-Brews-Studio/oracle-v2</string>
+    <string>/path/to/BankCurfew/oracle-v2</string>
 
     <key>EnvironmentVariables</key>
     <dict>

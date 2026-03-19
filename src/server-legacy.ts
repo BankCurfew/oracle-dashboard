@@ -135,8 +135,10 @@ const server = http.createServer(async (req, res) => {
   const pathname = parsedUrl.pathname;
   const query = parsedUrl.query;
 
-  // CORS headers
-  res.setHeader('Access-Control-Allow-Origin', '*');
+  // CORS headers — restrict to localhost only (legacy server)
+  const origin = req.headers.origin || '';
+  const allowedOrigin = (origin.startsWith('http://localhost:') || origin.startsWith('http://127.0.0.1:')) ? origin : '';
+  res.setHeader('Access-Control-Allow-Origin', allowedOrigin);
   res.setHeader('Access-Control-Allow-Methods', 'GET, POST, PATCH, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
   res.setHeader('Content-Type', 'application/json');
@@ -282,7 +284,7 @@ const server = http.createServer(async (req, res) => {
         return;
 
       // Legacy HTML UIs
-      case '/legacy/arthur':
+      case '/legacy/chat':
         res.setHeader('Content-Type', 'text/html');
         res.end(fs.readFileSync(ARTHUR_UI_PATH, 'utf-8'));
         return;

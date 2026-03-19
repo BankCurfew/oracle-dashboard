@@ -10,7 +10,7 @@
  * 3. Extract project identifier
  *
  * Example:
- *   cwd: ~/Nat-s-Agents/incubated/headline-mono/src/
+ *   cwd: ~/BankCurfew/incubated/headline-mono/src/
  *        -> (symlink resolves)
  *   real: ~/Code/github.com/example-org/example-repo/src/
  *        -> (regex match)

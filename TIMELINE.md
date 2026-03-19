@@ -61,7 +61,7 @@
 |------|--------------|-------|
 | Dec 24 | Issue #40 | Oracle v2 Repository Initialization |
 | Dec 24 | Issue #41 | Open Source Framework idea |
-| Dec 24 | `899de21` | Migrate MCP server from Nat-s-Agents lab |
+| Dec 24 | `899de21` | Migrate MCP server from BankCurfew lab |
 | Dec 24 | `7aee7fc` | Oracle v0.2.0 with FTS5 bug fix |
 | Dec 25 | `a219800` | Dashboard v0.3.0 with logging UI |
 | Dec 26 | `151212c` | Dashboard v0.4.0 with tabbed UI |
@@ -166,7 +166,7 @@
 | Time | Commit | Event |
 |------|--------|-------|
 | 10:10 | - | bunx 404 on private repo (trigger) |
-| 10:20 | - | Soul-Brews-Studio/oracle-v2 created |
+| 10:20 | - | BankCurfew/oracle-v2 created |
 | 10:30 | `bfbb2ab` | GitHub Actions CI pipeline |
 | 10:36 | `e0d915f` | Playwright E2E tests |
 | 10:40 | `f553ac3` | Codecov integration |
@@ -236,7 +236,7 @@ This project was inspired by and learned from:
 
 ```
 Oracle Nightly v0.2.3-nightly
-├── Public: github.com/Soul-Brews-Studio/oracle-v2
+├── Public: github.com/BankCurfew/oracle-v2
 ├── MCP Server: 20+ tools via stdio
 ├── HTTP API: :47778 (Hono.js)
 ├── Dashboard: React + 2D graph

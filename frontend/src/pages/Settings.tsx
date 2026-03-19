@@ -44,8 +44,8 @@ export function Settings() {
       return;
     }
 
-    if (newPassword && newPassword.length < 4) {
-      setMessage({ type: 'error', text: 'Password must be at least 4 characters' });
+    if (newPassword && newPassword.length < 12) {
+      setMessage({ type: 'error', text: 'Password must be at least 12 characters' });
       return;
     }
 

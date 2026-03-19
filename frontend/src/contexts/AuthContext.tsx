@@ -17,7 +17,7 @@ const AuthContext = createContext<AuthContextType | null>(null);
 
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [authState, setAuthState] = useState<AuthStatus>({
-    authenticated: true,
+    authenticated: false,
     authEnabled: false,
     hasPassword: false,
     localBypass: true,
@@ -31,8 +31,8 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       setAuthState(status);
     } catch (e) {
       console.error('Failed to check auth status:', e);
-      // On error, assume authenticated to not block
-      setAuthState(prev => ({ ...prev, authenticated: true }));
+      // Fail-closed: deny access when auth status cannot be verified
+      setAuthState(prev => ({ ...prev, authenticated: false }));
     } finally {
       setIsLoading(false);
     }

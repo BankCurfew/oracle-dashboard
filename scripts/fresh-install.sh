@@ -1,6 +1,6 @@
 #!/bin/bash
 # Fresh installation of Arra Oracle with seed data
-# Usage: curl -sSL https://raw.githubusercontent.com/Soul-Brews-Studio/arra-oracle/main/scripts/fresh-install.sh | bash
+# Usage: curl -sSL https://raw.githubusercontent.com/BankCurfew/arra-oracle/main/scripts/fresh-install.sh | bash
 set -e
 
 INSTALL_DIR="${ORACLE_INSTALL_DIR:-$HOME/.local/share/arra-oracle}"
@@ -47,7 +47,7 @@ fi
 
 # Clone
 echo "📥 Cloning Arra Oracle..."
-git clone --depth 1 https://github.com/Soul-Brews-Studio/arra-oracle.git "$INSTALL_DIR"
+git clone --depth 1 https://github.com/BankCurfew/arra-oracle.git "$INSTALL_DIR"
 cd "$INSTALL_DIR"
 
 # Install dependencies
@@ -116,4 +116,4 @@ elif command -v ifconfig &> /dev/null; then
     done
 fi
 echo ""
-echo "📖 Docs: https://github.com/Soul-Brews-Studio/arra-oracle"
+echo "📖 Docs: https://github.com/BankCurfew/arra-oracle"

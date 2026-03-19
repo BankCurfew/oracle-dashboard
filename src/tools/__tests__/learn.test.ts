@@ -34,7 +34,7 @@ describe('normalizeProject', () => {
   });
 
   it('should normalize to lowercase', () => {
-    expect(normalizeProject('github.com/Soul-Brews-Studio/Oracle-V2')).toBe('github.com/soul-brews-studio/oracle-v2');
+    expect(normalizeProject('github.com/BankCurfew/Oracle-V2')).toBe('github.com/soul-brews-studio/oracle-v2');
     expect(normalizeProject('https://github.com/Owner/Repo')).toBe('github.com/owner/repo');
     expect(normalizeProject('Owner/Repo')).toBe('github.com/owner/repo');
   });
@@ -61,7 +61,7 @@ describe('extractProjectFromSource', () => {
   });
 
   it('should extract from "rrr: org/repo" format', () => {
-    expect(extractProjectFromSource('rrr: Soul-Brews-Studio/oracle-v2'))
+    expect(extractProjectFromSource('rrr: BankCurfew/oracle-v2'))
       .toBe('github.com/soul-brews-studio/oracle-v2');
   });
 

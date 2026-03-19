@@ -5,7 +5,7 @@ Complete guide for fresh installation with seed data.
 ## Quick Install (Recommended)
 
 ```bash
-curl -sSL https://raw.githubusercontent.com/Soul-Brews-Studio/arra-oracle/main/scripts/fresh-install.sh | bash
+curl -sSL https://raw.githubusercontent.com/BankCurfew/arra-oracle/main/scripts/fresh-install.sh | bash
 ```
 
 This one-liner will:
@@ -88,7 +88,7 @@ If you prefer step-by-step:
 
 ```bash
 # 1. Clone
-git clone https://github.com/Soul-Brews-Studio/arra-oracle.git ~/.local/share/arra-oracle
+git clone https://github.com/BankCurfew/arra-oracle.git ~/.local/share/arra-oracle
 cd ~/.local/share/arra-oracle
 
 # 2. Install dependencies

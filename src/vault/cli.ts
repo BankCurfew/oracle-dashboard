@@ -58,7 +58,7 @@ How it works:
   5. oracle-vault sync           git add + commit + push (backup)
 
 Examples:
-  oracle-vault init Soul-Brews-Studio/oracle-vault
+  oracle-vault init BankCurfew/oracle-vault
   oracle-vault migrate --list
   oracle-vault migrate
   oracle-vault sync

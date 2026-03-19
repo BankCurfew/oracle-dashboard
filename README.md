@@ -40,16 +40,16 @@ Distributed via GitHub — no npm publish needed:
 
 ```bash
 # MCP server (stdio, for Claude Code)
-bunx --bun arra-oracle@github:Soul-Brews-Studio/arra-oracle#main
+bunx --bun arra-oracle@github:BankCurfew/arra-oracle#main
 
 # Vault CLI (secondary bin — use --package)
-bunx --bun --package arra-oracle@github:Soul-Brews-Studio/arra-oracle#main oracle-vault --help
+bunx --bun --package arra-oracle@github:BankCurfew/arra-oracle#main oracle-vault --help
 ```
 
 ### Add to Claude Code
 
 ```bash
-claude mcp add arra-oracle -- bunx --bun arra-oracle@github:Soul-Brews-Studio/arra-oracle#main
+claude mcp add arra-oracle -- bunx --bun arra-oracle@github:BankCurfew/arra-oracle#main
 ```
 
 Or in `~/.claude.json`:
@@ -58,7 +58,7 @@ Or in `~/.claude.json`:
   "mcpServers": {
     "arra-oracle": {
       "command": "bunx",
-      "args": ["--bun", "arra-oracle@github:Soul-Brews-Studio/arra-oracle#main"]
+      "args": ["--bun", "arra-oracle@github:BankCurfew/arra-oracle#main"]
     }
   }
 }
@@ -67,7 +67,7 @@ Or in `~/.claude.json`:
 ### From source
 
 ```bash
-git clone https://github.com/Soul-Brews-Studio/arra-oracle.git
+git clone https://github.com/BankCurfew/arra-oracle.git
 cd arra-oracle && bun install
 bun run dev          # MCP server
 bun run server       # HTTP API on :47778
@@ -77,7 +77,7 @@ bun run server       # HTTP API on :47778
 <summary>Install script (legacy)</summary>
 
 ```bash
-curl -sSL https://raw.githubusercontent.com/Soul-Brews-Studio/arra-oracle/main/scripts/install.sh | bash
+curl -sSL https://raw.githubusercontent.com/BankCurfew/arra-oracle/main/scripts/install.sh | bash
 ```
 </details>
 

@@ -142,6 +142,7 @@ app.use('*', async (c, next) => {
   c.header('X-Frame-Options', 'DENY');
   c.header('X-XSS-Protection', '1; mode=block');
   c.header('Referrer-Policy', 'strict-origin-when-cross-origin');
+  c.header('Content-Security-Policy', "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data:; connect-src 'self'; font-src 'self'; object-src 'none'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'");
 });
 
 // ============================================================================
@@ -271,8 +272,30 @@ app.get('/api/auth/status', (c) => {
   });
 });
 
+// Rate limiting for login endpoint
+const loginAttempts = new Map<string, { count: number; resetAt: number }>();
+const LOGIN_RATE_LIMIT = 5; // max attempts
+const LOGIN_RATE_WINDOW_MS = 15 * 60 * 1000; // 15 minutes
+
+function checkLoginRateLimit(ip: string): boolean {
+  const now = Date.now();
+  const entry = loginAttempts.get(ip);
+  if (!entry || now > entry.resetAt) {
+    loginAttempts.set(ip, { count: 1, resetAt: now + LOGIN_RATE_WINDOW_MS });
+    return true;
+  }
+  entry.count++;
+  return entry.count <= LOGIN_RATE_LIMIT;
+}
+
 // Login
 app.post('/api/auth/login', async (c) => {
+  // Rate limit by IP
+  const connInfo = (c.env as any)?.remoteAddress || '127.0.0.1';
+  if (!checkLoginRateLimit(connInfo)) {
+    return c.json({ success: false, error: 'Too many login attempts. Try again in 15 minutes.' }, 429);
+  }
+
   const body = await c.req.json();
   const { password } = body;
 
@@ -336,6 +359,11 @@ app.post('/api/settings', async (c) => {
 
   // Handle password change
   if (body.newPassword) {
+    // Server-side password length validation
+    if (typeof body.newPassword !== 'string' || body.newPassword.length < 12) {
+      return c.json({ error: 'Password must be at least 12 characters' }, 400);
+    }
+
     // If password exists, require current password
     const existingHash = getSetting('auth_password_hash');
     if (existingHash) {
